@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --DarkModeElements: hsl(209, 23%, 22%);
+    --DarkModeBackground: hsl(207, 26%, 17%);
+    --LightModeText: hsl(200, 15%, 8%);
+    --LightModeInput: hsl(0, 0%, 52%);
+    --new:#aaa;
+    --LightModeBackground: hsl(0, 0%, 98%);
+    --DarkModeTextyLightModeElements: hsl(0, 0%, 100%);
+}
+body{
+    background-color: var(--LightModeBackground);
+}
+header{
+    min-height: 8vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vmin;
+}
+.header__title{
+    margin-left: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--LightModeText);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.header__icon{
+    margin-right: 8px;
+}
+.dark{
+    margin-right: 5%;
+    color: var(--LightModeText);
+}
+
+.allInfo{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 92vmin;
+    position: absolute;
+    top: 8vmin;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 999;
+}
+.show{
+    padding: 8px 30px;
+    background-color: inherit;
+    box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.75);
+}
+.allInfo img {
+    min-width: 40%;
+    max-width: 40%;
+    object-fit: cover;
+}
+.Info{
+    min-width: 40%;
+    max-width: 40%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+.first{
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+.containerInfo{
+    width: 100%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: space-between;
+}
+.last{
+    height: 55%;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+}
+.down{
+    display: flex;
+    justify-content: flex-start; 
+}
+.down p{
+    display: inline-block;
+}
+.ul{
+    list-style-type: none;
+}
+.ul li{
+    display: inline-block;
+    padding: 3px 16px;
+    box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.75);
+    margin-right: .5rem;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+.father__icon{
+    margin-left: 5%;
+    color: #a8a7a7;
+}
+.father__icon i{
+    margin-right: .8vw;
+}
+.search{
+    padding: 14px 28px 14px 0;
+    border: none;
+    font-size: .9rem;
+}
+.select{
+    width: 20%;
+    margin-right: 5%;
+    border: none;
+
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+  appearance: none; 
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+  border-radius: 10px;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.cards{
+    display: grid;
+    width: 90%;
+    justify-content: center;
+    margin: 5rem auto;
+   grid-template-columns: repeat(auto-fit, 200px);
+   grid-auto-rows: 300px;
+    grid-gap: 2rem;
+    min-height: 70vh;
+}
+.cards__card{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.none{
+    display: none;
+}
+.cards__card img{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 46%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card__info{
+    width: 93%;
+    margin-left: 7%;
+    margin-bottom: 20%;
+}
+.info__title{
+    font-size: 1.3rem  ;
+    color: var(--LightModeText);
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: text-decoration .5s;
+}
+.info__title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.card__info p:nth-child(3){
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/**************************************************************************************************/
+.body--active{
+    background-color: var(--DarkModeBackground);
+}
+.body--active header {
+    background-color: var(--DarkModeElements);
+    box-shadow: 1px 5px 25px -12px rgb(32, 32, 32);
+}
+.body--active .show{
+    color: var(--DarkModeTextyLightModeElements);
+    background-color: var(--DarkModeElements);
+}
+.body--active .header__title{
+    color: var(--DarkModeTextyLightModeElements);
+}
+.body--active .dark{
+    color: var(--DarkModeTextyLightModeElements);
+}
+.body--active .header__icon{
+    color: #fff;
+}
+.body--active .Info{
+    color: var(--DarkModeTextyLightModeElements);
+}
+.body--active .search{
+    background-color: var(--DarkModeElements);
+}
+
+.body--active .cards__card{
+    background-color: var(--DarkModeElements);
+    box-shadow: 0px 0px 5px 0px rgb(29, 28, 29);
+}
+
+/**********************************************************************************************/
+@media screen and (max-width:450px){
+    .cards__card{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form{
+        display: block;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .father__icon {
+        width: 100%;
+        position: relative;
+    }
+    .father__icon i{
+        position: absolute;
+        top: 10px;
+        left: 3%;
+    }
+    .search{
+        padding: 10px 30px;
+        display: block;
+        width: 100%;
+    }
+    .father__icon{
+        margin-left: 0;
+    }
+    .select{
+        padding: 10px 30px;
+        margin-top: 20px;
+        display: block;
+        width: 50%;
+    }
+    header{
+        min-height: 10vh;
+    }
+    .header__title{
+        font-size: 1rem;
+    }
+    .ocultar{
+        display: none;
+    }
+    .allInfo{
+        width: 100%;
+        min-height: 100vh;
+        top: 10vh;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+    }
+   
+    .allInfo img {
+        min-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Info{
+        min-width: 100%;
+        max-width: 100%;
+
+    }
+    .containerInfo{
+        display:block;
+    }
+    .containerInfo .first{
+        margin-top: 20px;
+    }
+    .last{
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .down p{
+        display: block;
+    }
+
+}
+@media screen and (max-width:421px){
+    .cards__card{
+        width: 80%;
+    }
+}
